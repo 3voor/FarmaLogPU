@@ -24,18 +24,18 @@
         /// </summary>
         private void InitializeComponent() {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.txtCodigo = new System.Windows.Forms.TextBox();
-            this.txtFecha = new System.Windows.Forms.TextBox();
-            this.txtInstitucion = new System.Windows.Forms.TextBox();
-            this.dtpFechaLimite = new System.Windows.Forms.DateTimePicker();
-            this.cbPrioridad = new System.Windows.Forms.ComboBox();
-            this.btnAdministrarSolicitud = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
+            this.btnAdministrarSolicitud = new System.Windows.Forms.Button();
+            this.cbPrioridad = new System.Windows.Forms.ComboBox();
+            this.dtpFechaLimite = new System.Windows.Forms.DateTimePicker();
+            this.txtInstitucion = new System.Windows.Forms.TextBox();
+            this.txtFecha = new System.Windows.Forms.TextBox();
+            this.txtCodigo = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -61,86 +61,14 @@
             this.groupBox1.Text = "Datos Suministro";
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
-            // label1
+            // btnCancelar
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(19, 20);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(40, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Codigo";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(19, 45);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(37, 13);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Fecha";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(19, 72);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(67, 13);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "Fecha Limite";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(19, 100);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(48, 13);
-            this.label4.TabIndex = 3;
-            this.label4.Text = "Prioridad";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(19, 126);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(55, 13);
-            this.label5.TabIndex = 4;
-            this.label5.Text = "Institución";
-            // 
-            // txtCodigo
-            // 
-            this.txtCodigo.Location = new System.Drawing.Point(92, 13);
-            this.txtCodigo.Name = "txtCodigo";
-            this.txtCodigo.Size = new System.Drawing.Size(100, 20);
-            this.txtCodigo.TabIndex = 6;
-            // 
-            // txtFecha
-            // 
-            this.txtFecha.Location = new System.Drawing.Point(92, 38);
-            this.txtFecha.Name = "txtFecha";
-            this.txtFecha.Size = new System.Drawing.Size(100, 20);
-            this.txtFecha.TabIndex = 7;
-            // 
-            // txtInstitucion
-            // 
-            this.txtInstitucion.Location = new System.Drawing.Point(92, 119);
-            this.txtInstitucion.Name = "txtInstitucion";
-            this.txtInstitucion.Size = new System.Drawing.Size(100, 20);
-            this.txtInstitucion.TabIndex = 9;
-            // 
-            // dtpFechaLimite
-            // 
-            this.dtpFechaLimite.Location = new System.Drawing.Point(92, 64);
-            this.dtpFechaLimite.Name = "dtpFechaLimite";
-            this.dtpFechaLimite.Size = new System.Drawing.Size(200, 20);
-            this.dtpFechaLimite.TabIndex = 10;
-            // 
-            // cbPrioridad
-            // 
-            this.cbPrioridad.FormattingEnabled = true;
-            this.cbPrioridad.Location = new System.Drawing.Point(92, 90);
-            this.cbPrioridad.Name = "cbPrioridad";
-            this.cbPrioridad.Size = new System.Drawing.Size(121, 21);
-            this.cbPrioridad.TabIndex = 11;
+            this.btnCancelar.Location = new System.Drawing.Point(285, 175);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(75, 23);
+            this.btnCancelar.TabIndex = 13;
+            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.UseVisualStyleBackColor = true;
             // 
             // btnAdministrarSolicitud
             // 
@@ -152,14 +80,88 @@
             this.btnAdministrarSolicitud.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
             this.btnAdministrarSolicitud.UseVisualStyleBackColor = true;
             // 
-            // btnCancelar
+            // cbPrioridad
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(285, 175);
-            this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(75, 23);
-            this.btnCancelar.TabIndex = 13;
-            this.btnCancelar.Text = "Cancelar";
-            this.btnCancelar.UseVisualStyleBackColor = true;
+            this.cbPrioridad.FormattingEnabled = true;
+            this.cbPrioridad.Location = new System.Drawing.Point(92, 90);
+            this.cbPrioridad.Name = "cbPrioridad";
+            this.cbPrioridad.Size = new System.Drawing.Size(121, 21);
+            this.cbPrioridad.TabIndex = 11;
+            // 
+            // dtpFechaLimite
+            // 
+            this.dtpFechaLimite.Location = new System.Drawing.Point(92, 64);
+            this.dtpFechaLimite.Name = "dtpFechaLimite";
+            this.dtpFechaLimite.Size = new System.Drawing.Size(200, 20);
+            this.dtpFechaLimite.TabIndex = 10;
+            // 
+            // txtInstitucion
+            // 
+            this.txtInstitucion.Location = new System.Drawing.Point(92, 119);
+            this.txtInstitucion.Name = "txtInstitucion";
+            this.txtInstitucion.Size = new System.Drawing.Size(100, 20);
+            this.txtInstitucion.TabIndex = 9;
+            // 
+            // txtFecha
+            // 
+            this.txtFecha.Location = new System.Drawing.Point(92, 38);
+            this.txtFecha.Name = "txtFecha";
+            this.txtFecha.ReadOnly = true;
+            this.txtFecha.Size = new System.Drawing.Size(100, 20);
+            this.txtFecha.TabIndex = 7;
+            // 
+            // txtCodigo
+            // 
+            this.txtCodigo.Location = new System.Drawing.Point(92, 13);
+            this.txtCodigo.Name = "txtCodigo";
+            this.txtCodigo.ReadOnly = true;
+            this.txtCodigo.Size = new System.Drawing.Size(100, 20);
+            this.txtCodigo.TabIndex = 6;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(19, 126);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(55, 13);
+            this.label5.TabIndex = 4;
+            this.label5.Text = "Institución";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(19, 100);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(48, 13);
+            this.label4.TabIndex = 3;
+            this.label4.Text = "Prioridad";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(19, 72);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(67, 13);
+            this.label3.TabIndex = 2;
+            this.label3.Text = "Fecha Limite";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(19, 45);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(37, 13);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "Fecha";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(19, 20);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(40, 13);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Codigo";
             // 
             // SolicitudSuministro
             // 
