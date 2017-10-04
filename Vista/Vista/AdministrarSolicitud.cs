@@ -9,9 +9,13 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Vista {
-    public partial class Form1 : Form {
-        public Form1() {
+    public partial class AdministrarSolicitud : Form {
+        public AdministrarSolicitud() {
             InitializeComponent();
+        }
+
+        private void button2_Click(object sender, EventArgs e) {
+
         }
     }
 }
