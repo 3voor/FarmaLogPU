@@ -6,8 +6,9 @@ using System.Threading.Tasks;
 
 namespace Modelo
 {
-    public class Proveedor
+    public class DetalleSolicitudSuministro
     {
-
+        private int idDetalleSolicitudSuministro;
+        
     }
 }
