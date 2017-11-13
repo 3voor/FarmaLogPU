@@ -70,11 +70,11 @@
     <Compile Include="frmGestionProductos.Designer.cs">
       <DependentUpon>frmGestionProductos.cs</DependentUpon>
     </Compile>
-    <Compile Include="SolicitudSuministro.cs">
+    <Compile Include="fmrRegistrarSolicitudSuministro.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="SolicitudSuministro.Designer.cs">
-      <DependentUpon>SolicitudSuministro.cs</DependentUpon>
+    <Compile Include="fmrRegistrarSolicitudSuministro.Designer.cs">
+      <DependentUpon>fmrRegistrarSolicitudSuministro.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -99,8 +99,8 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="SolicitudSuministro.resx">
-      <DependentUpon>SolicitudSuministro.cs</DependentUpon>
+    <EmbeddedResource Include="fmrRegistrarSolicitudSuministro.resx">
+      <DependentUpon>fmrRegistrarSolicitudSuministro.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

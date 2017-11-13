@@ -16,18 +16,25 @@ namespace AccesoDatos
             try
             {
                 String cadena = "server=200.16.7.96; user=inf282g1; database=inf282g1;password=BRXRKa3O5JUiqJWn;";
-                SqlConnection conn = new SqlConnection(cadena);
+                MySqlConnection conn =
+                new MySqlConnection(cadena);
                 conn.Open();
-                Console.WriteLine("La conexion se ha realizado con exito");
+                System.Console.WriteLine("Conexion exitosa");
                 MySqlCommand cmd = new MySqlCommand();
-                String sql = "INSERT INTO SolicitudSumnistros " + "(idSolicitudSuministro, fechaPeticion, fechaLimite, institucion, Prioridad_idPrioridad, Empleados_idEmpleado) " + "VALUES (" + 
-                    s.IdSolicitudSuministro + ",'" + s.FechaPeticion + "','" + s.FechaLimite;
-                //cmd.Connection = conn;
-                cmd.CommandText = sql;
+                cmd.Connection = conn;
+                cmd.CommandText = "REGISTRAR_SOLICITUD_SUMINISTRO";
+                cmd.CommandType = System.Data.CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("_idEmpleado", s.Empleado);
+                cmd.Parameters.AddWithValue("_prioridad", s.Prioridad);
+                cmd.Parameters.AddWithValue("_fechaPeticion", s.FechaPeticion);
+                cmd.Parameters.AddWithValue("_institucion", s.Institucion);
                 cmd.ExecuteNonQuery();
+                conn.Close();
                 return true;
-            }catch(Exception ex)
+            }
+            catch (Exception ex)
             {
+                Console.WriteLine(ex.Message);
                 return false;
             }
         }

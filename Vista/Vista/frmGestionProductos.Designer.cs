@@ -37,11 +37,12 @@
             this.btBuscar = new System.Windows.Forms.Button();
             this.btnComposicion = new System.Windows.Forms.Button();
             this.dgvInsumo = new System.Windows.Forms.DataGridView();
-            this.pictureBoxPieChart = new System.Windows.Forms.PictureBox();
             this.NombreInsumo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DescripcionInsumo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.UnidadMedida = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pictureBoxPieChart = new System.Windows.Forms.PictureBox();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvInsumo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPieChart)).BeginInit();
             this.SuspendLayout();
@@ -129,14 +130,6 @@
             this.dgvInsumo.Size = new System.Drawing.Size(441, 171);
             this.dgvInsumo.TabIndex = 8;
             // 
-            // pictureBoxPieChart
-            // 
-            this.pictureBoxPieChart.Location = new System.Drawing.Point(469, 211);
-            this.pictureBoxPieChart.Name = "pictureBoxPieChart";
-            this.pictureBoxPieChart.Size = new System.Drawing.Size(295, 224);
-            this.pictureBoxPieChart.TabIndex = 9;
-            this.pictureBoxPieChart.TabStop = false;
-            // 
             // NombreInsumo
             // 
             this.NombreInsumo.HeaderText = "Nombre";
@@ -158,11 +151,29 @@
             this.UnidadMedida.HeaderText = "UM";
             this.UnidadMedida.Name = "UnidadMedida";
             // 
+            // pictureBoxPieChart
+            // 
+            this.pictureBoxPieChart.Location = new System.Drawing.Point(469, 211);
+            this.pictureBoxPieChart.Name = "pictureBoxPieChart";
+            this.pictureBoxPieChart.Size = new System.Drawing.Size(295, 224);
+            this.pictureBoxPieChart.TabIndex = 9;
+            this.pictureBoxPieChart.TabStop = false;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(539, 111);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(104, 23);
+            this.button1.TabIndex = 10;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
             // frmGestionProductos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(705, 425);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.dgvInsumo);
             this.Controls.Add(this.pictureBoxPieChart);
             this.Controls.Add(this.btnComposicion);
@@ -198,5 +209,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn DescripcionInsumo;
         private System.Windows.Forms.DataGridViewTextBoxColumn Cantidad;
         private System.Windows.Forms.DataGridViewTextBoxColumn UnidadMedida;
+        private System.Windows.Forms.Button button1;
     }
 }
