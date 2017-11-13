@@ -13,7 +13,7 @@ namespace Vista {
         static void Main() {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new SolicitudSuministro());
+            Application.Run(new frmGestionProductos());            
         }
     }
 }
