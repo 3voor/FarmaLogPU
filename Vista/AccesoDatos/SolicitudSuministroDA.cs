@@ -24,6 +24,9 @@ namespace AccesoDatos
                 cmd.Connection = conn;
                 cmd.CommandText = "REGISTRAR_SOLICITUD_SUMINISTRO";
                 cmd.CommandType = System.Data.CommandType.StoredProcedure;
+                cmd.Parameters["_idSolicitudSuministro"].Direction = System.Data.ParameterDirection.Output;
+                int id = Convert.ToInt32(cmd.Parameters["_idSolicitudSuministro"]);
+                Console.WriteLine();
                 cmd.Parameters.AddWithValue("_idEmpleado", 1);
                 cmd.Parameters.AddWithValue("_prioridad", s.Prioridad);
                 cmd.Parameters.AddWithValue("_fechaPeticion", s.FechaPeticion);
