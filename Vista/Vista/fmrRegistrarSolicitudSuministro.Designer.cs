@@ -37,8 +37,8 @@
             this.Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.UnidadMedida = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnInsertarInsumo = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.btnEliminarInsumo = new System.Windows.Forms.Button();
+            this.btnModificar = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvInsumo)).BeginInit();
             this.SuspendLayout();
@@ -165,32 +165,32 @@
             this.btnInsertarInsumo.UseVisualStyleBackColor = true;
             this.btnInsertarInsumo.Click += new System.EventHandler(this.button1_Click);
             // 
-            // button2
+            // btnEliminarInsumo
             // 
-            this.button2.Location = new System.Drawing.Point(139, 179);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(101, 23);
-            this.button2.TabIndex = 16;
-            this.button2.Text = "Eliminar Insumo";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnEliminarInsumo.Location = new System.Drawing.Point(268, 179);
+            this.btnEliminarInsumo.Name = "btnEliminarInsumo";
+            this.btnEliminarInsumo.Size = new System.Drawing.Size(101, 23);
+            this.btnEliminarInsumo.TabIndex = 16;
+            this.btnEliminarInsumo.Text = "Eliminar Insumo";
+            this.btnEliminarInsumo.UseVisualStyleBackColor = true;
             // 
-            // button3
+            // btnModificar
             // 
-            this.button3.Location = new System.Drawing.Point(256, 179);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(113, 23);
-            this.button3.TabIndex = 17;
-            this.button3.Text = "Editar Cantidad";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.btnModificar.Location = new System.Drawing.Point(144, 179);
+            this.btnModificar.Name = "btnModificar";
+            this.btnModificar.Size = new System.Drawing.Size(106, 23);
+            this.btnModificar.TabIndex = 17;
+            this.btnModificar.Text = "Modificar Insumo";
+            this.btnModificar.UseVisualStyleBackColor = true;
+            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
             // 
             // fmrRegistrarSolicitudSuministro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(399, 429);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.btnModificar);
+            this.Controls.Add(this.btnEliminarInsumo);
             this.Controls.Add(this.btnInsertarInsumo);
             this.Controls.Add(this.dgvInsumo);
             this.Controls.Add(this.groupBox1);
@@ -220,9 +220,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Cantidad;
         private System.Windows.Forms.DataGridViewTextBoxColumn UnidadMedida;
         private System.Windows.Forms.Button btnInsertarInsumo;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button btnEliminarInsumo;
         private System.Windows.Forms.ComboBox cboxPrioridad;
+        private System.Windows.Forms.Button btnModificar;
     }
 }
 

@@ -24,7 +24,7 @@ namespace AccesoDatos
                 cmd.Connection = conn;
                 cmd.CommandText = "REGISTRAR_SOLICITUD_SUMINISTRO";
                 cmd.CommandType = System.Data.CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("_idEmpleado", s.Empleado);
+                cmd.Parameters.AddWithValue("_idEmpleado", 1);
                 cmd.Parameters.AddWithValue("_prioridad", s.Prioridad);
                 cmd.Parameters.AddWithValue("_fechaPeticion", s.FechaPeticion);
                 cmd.Parameters.AddWithValue("_institucion", s.Institucion);
@@ -39,6 +39,32 @@ namespace AccesoDatos
             }
         }
 
+        public bool registratDetalleSolicitud(int id, Insumo i)
+        {
+            try
+            {
+                String cadena = "server=200.16.7.96; user=inf282g1; database=inf282g1;password=BRXRKa3O5JUiqJWn;";
+                MySqlConnection conn =
+                new MySqlConnection(cadena);
+                conn.Open();
+                System.Console.WriteLine("Conexion exitosa");
+                MySqlCommand cmd = new MySqlCommand();
+                cmd.Connection = conn;
+                cmd.CommandText = "INSERTAR_DETALLE_SOLICITUD";
+                cmd.CommandType = System.Data.CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("_idSolSumi", id);
+                cmd.Parameters.AddWithValue("_idInsumo", i.IdInsumo);
+                cmd.Parameters.AddWithValue("_cantidad", i.Cantidad);
+                cmd.ExecuteNonQuery();
+                conn.Close();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                return false;
+            }
+        }
 
     }
 }

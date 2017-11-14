@@ -29,6 +29,7 @@ namespace Vista {
         {
             int index = dgvBusquedaInsumo.CurrentRow.Index;
             insumoSeleccionado = lista[index];
+            insumoSeleccionado.Cantidad = Convert.ToInt32(txtCantidad.Text);
             this.DialogResult = DialogResult.OK;
         }
 
