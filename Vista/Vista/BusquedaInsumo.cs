@@ -27,20 +27,56 @@ namespace Vista {
 
         private void btnAñadir_Click(object sender, EventArgs e)
         {
-            int index = dgvBusquedaInsumo.CurrentRow.Index;
-            insumoSeleccionado = lista[index];
-            insumoSeleccionado.Cantidad = Convert.ToInt32(txtCantidad.Text);
-            this.DialogResult = DialogResult.OK;
+            bool ok = true;
+            int selectedRowCount = dgvBusquedaInsumo.Rows.GetRowCount(DataGridViewElementStates.Selected);
+            if(selectedRowCount != 1)
+            {
+                string message = "No se ha seleccionado un insumo";
+                string caption = "Error";
+                MessageBoxButtons buttons = MessageBoxButtons.OK;
+                DialogResult result;
+                result = MessageBox.Show(message, caption, buttons);
+                if (result == System.Windows.Forms.DialogResult.Yes)
+                {
+                    this.Close();
+                }
+                ok = false;
+            }
+            else
+            {
+                int index = dgvBusquedaInsumo.CurrentRow.Index;
+                insumoSeleccionado = lista[index];
+            }
+
+            if (txtCantidad.Text == "")
+            {
+                string message = "No se ha ingresado la cantidad";
+                string caption = "Error";
+                MessageBoxButtons buttons = MessageBoxButtons.OK;
+                DialogResult result;
+                result = MessageBox.Show(message, caption, buttons);
+                if (result == System.Windows.Forms.DialogResult.Yes)
+                {
+                    this.Close();
+                }
+                ok = false;
+            }
+            else
+            {
+                insumoSeleccionado.Cantidad = Convert.ToInt32(txtCantidad.Text);
+            }
+            if (ok)
+            {
+                this.DialogResult = DialogResult.OK;
+            }                       
         }
 
         private void btnBuscar_Click(object sender, EventArgs e)
-        {
-            string nombreIngresado = txtInsumoBuscado.Text;
-            lista = gestorInsumo.devolverListaInsumoCoincidencia(nombreIngresado);
-            if (lista.Count == 0)
+        {            
+            if(txtInsumoBuscado.Text == "")
             {
-                string message = "No se encontraron Coincidencias";
-                string caption = "Error";
+                string message = "No se ha ingresado un nombre para buscar";
+                string caption = "Alerta";
                 MessageBoxButtons buttons = MessageBoxButtons.OK;
                 DialogResult result;
                 result = MessageBox.Show(message, caption, buttons);
@@ -51,21 +87,43 @@ namespace Vista {
             }
             else
             {
-                string message = "Se encontraron " + lista.Count + " resultados";
-                string caption = "Consulta Exitosa";
-                MessageBoxButtons buttons = MessageBoxButtons.OK;
-                DialogResult result;
-                result = MessageBox.Show(message, caption, buttons);
-                if (result == System.Windows.Forms.DialogResult.Yes)
+                string nombreIngresado = txtInsumoBuscado.Text;
+                lista = gestorInsumo.devolverListaInsumoCoincidencia(nombreIngresado);
+                if (lista.Count == 0)
                 {
-                    this.Close();
+                    string message = "No se encontraron Coincidencias";
+                    string caption = "Error";
+                    MessageBoxButtons buttons = MessageBoxButtons.OK;
+                    DialogResult result;
+                    result = MessageBox.Show(message, caption, buttons);
+                    if (result == System.Windows.Forms.DialogResult.Yes)
+                    {
+                        this.Close();
+                    }
                 }
-            }
-            foreach (Insumo i in lista)
-            {
-                i.UnidadMedida.Nombre = gestorUnidadMedida.buscarUnidadMedida(i.UnidadMedida.IdUnidadMedida);
-                dgvBusquedaInsumo.Rows.Add(new object[] { i.NombreInsumo, i.Descripcion, i.UnidadMedida.Nombre});
-            }
+                else
+                {
+                    string message = "Se encontraron " + lista.Count + " resultados";
+                    string caption = "Consulta Exitosa";
+                    MessageBoxButtons buttons = MessageBoxButtons.OK;
+                    DialogResult result;
+                    result = MessageBox.Show(message, caption, buttons);
+                    if (result == System.Windows.Forms.DialogResult.Yes)
+                    {
+                        this.Close();
+                    }
+                }
+                foreach (Insumo i in lista)
+                {
+                    i.UnidadMedida.Nombre = gestorUnidadMedida.buscarUnidadMedida(i.UnidadMedida.IdUnidadMedida);
+                    dgvBusquedaInsumo.Rows.Add(new object[] { i.NombreInsumo, i.Descripcion, i.UnidadMedida.Nombre });
+                }
+            }            
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            this.DialogResult = DialogResult.Cancel;
         }
     }
 }

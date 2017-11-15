@@ -33,12 +33,12 @@
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnAdministrarSolicitud = new System.Windows.Forms.Button();
             this.dgvInsumo = new System.Windows.Forms.DataGridView();
-            this.NombreInsumo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.UnidadMedida = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnInsertarInsumo = new System.Windows.Forms.Button();
             this.btnEliminarInsumo = new System.Windows.Forms.Button();
             this.btnModificar = new System.Windows.Forms.Button();
+            this.NombreInsumo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.UnidadMedida = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvInsumo)).BeginInit();
             this.SuspendLayout();
@@ -140,21 +140,6 @@
             this.dgvInsumo.Size = new System.Drawing.Size(346, 150);
             this.dgvInsumo.TabIndex = 14;
             // 
-            // NombreInsumo
-            // 
-            this.NombreInsumo.HeaderText = "Nombre Insumo";
-            this.NombreInsumo.Name = "NombreInsumo";
-            // 
-            // Cantidad
-            // 
-            this.Cantidad.HeaderText = "Cantidad";
-            this.Cantidad.Name = "Cantidad";
-            // 
-            // UnidadMedida
-            // 
-            this.UnidadMedida.HeaderText = "Unidad Medida";
-            this.UnidadMedida.Name = "UnidadMedida";
-            // 
             // btnInsertarInsumo
             // 
             this.btnInsertarInsumo.Location = new System.Drawing.Point(23, 179);
@@ -173,6 +158,7 @@
             this.btnEliminarInsumo.TabIndex = 16;
             this.btnEliminarInsumo.Text = "Eliminar Insumo";
             this.btnEliminarInsumo.UseVisualStyleBackColor = true;
+            this.btnEliminarInsumo.Click += new System.EventHandler(this.btnEliminarInsumo_Click);
             // 
             // btnModificar
             // 
@@ -180,9 +166,28 @@
             this.btnModificar.Name = "btnModificar";
             this.btnModificar.Size = new System.Drawing.Size(106, 23);
             this.btnModificar.TabIndex = 17;
-            this.btnModificar.Text = "Modificar Insumo";
+            this.btnModificar.Text = "Modificar Cantidad";
             this.btnModificar.UseVisualStyleBackColor = true;
             this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
+            // 
+            // NombreInsumo
+            // 
+            this.NombreInsumo.HeaderText = "Nombre Insumo";
+            this.NombreInsumo.Name = "NombreInsumo";
+            this.NombreInsumo.ReadOnly = true;
+            this.NombreInsumo.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
+            // Cantidad
+            // 
+            this.Cantidad.HeaderText = "Cantidad";
+            this.Cantidad.Name = "Cantidad";
+            this.Cantidad.ReadOnly = true;
+            // 
+            // UnidadMedida
+            // 
+            this.UnidadMedida.HeaderText = "Unidad Medida";
+            this.UnidadMedida.Name = "UnidadMedida";
+            this.UnidadMedida.ReadOnly = true;
             // 
             // fmrRegistrarSolicitudSuministro
             // 
@@ -216,13 +221,13 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.DataGridView dgvInsumo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NombreInsumo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Cantidad;
-        private System.Windows.Forms.DataGridViewTextBoxColumn UnidadMedida;
         private System.Windows.Forms.Button btnInsertarInsumo;
         private System.Windows.Forms.Button btnEliminarInsumo;
         private System.Windows.Forms.ComboBox cboxPrioridad;
         private System.Windows.Forms.Button btnModificar;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NombreInsumo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Cantidad;
+        private System.Windows.Forms.DataGridViewTextBoxColumn UnidadMedida;
     }
 }
 
