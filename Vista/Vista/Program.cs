@@ -14,7 +14,8 @@ namespace Vista {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             //Application.Run(new frmGestionProductos());
-            Application.Run(new fmrRegistrarSolicitudSuministro());            
+            //Application.Run(new fmrRegistrarSolicitudSuministro());            
+            Application.Run(new Logueo());
         }
     }
 }

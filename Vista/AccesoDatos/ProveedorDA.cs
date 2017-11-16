@@ -25,6 +25,7 @@ namespace AccesoDatos
                 //cmd.Connection = conn;
                 cmd.CommandText = sql;
                 cmd.ExecuteNonQuery();
+                conn.Close();
                 return true;
             }
             catch (Exception ex)
