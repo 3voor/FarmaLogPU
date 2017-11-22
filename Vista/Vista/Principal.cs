@@ -76,9 +76,9 @@ namespace Vista {
         private void ArrangeFormSize(int opcion)
         {
             if(opcion == 1)
-                this.formGestionProd.Location = new Point(this.ClientSize.Width - this.formGestionProd.Width, this.ClientSize.Height - this.formGestionProd.Height);
+                this.formGestionProd.Location = new Point(this.ClientSize.Width - this.formGestionProd.Width-160, this.ClientSize.Height - this.formGestionProd.Height-20);
             else if(opcion == 2)
-                this.formSoliSumin.Location = new Point(this.ClientSize.Width - this.formSoliSumin.Width, this.ClientSize.Height - this.formSoliSumin.Height);
+                this.formSoliSumin.Location = new Point(this.ClientSize.Width - this.formSoliSumin.Width-160, this.ClientSize.Height - this.formSoliSumin.Height-40);
         }
 
         private void botonSolSumin_Click(object sender, EventArgs e)
