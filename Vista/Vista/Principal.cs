@@ -10,8 +10,14 @@ using System.Windows.Forms;
 
 namespace Vista {
     public partial class Principal : Form {
+
+        private frmGestionProductos formGestionProd = null;
+        private fmrRegistrarSolicitudSuministro formSoliSumin = null;
+
         public Principal() {
             InitializeComponent();
+            this.formGestionProd = new frmGestionProductos();
+            this.formSoliSumin = new fmrRegistrarSolicitudSuministro();
         }
 
         private void label1_Click(object sender, EventArgs e) {
@@ -47,8 +53,40 @@ namespace Vista {
             {
                 sideMenu.Visible = false;
                 sideMenu.Width = 260;
-                Pane
+                
             }
+        }
+
+        private void Bus_Click(object sender, EventArgs e)
+        {
+            //this.formGestionProd = new frmGestionProductos();
+            this.formGestionProd.TopLevel = false;
+            this.formGestionProd.Visible = true;
+            this.formSoliSumin.Visible = false;
+            this.Controls.Add(this.formGestionProd);            
+            this.ArrangeFormSize(1);
+        }
+
+        private void Principal_SizeChange(object sender, EventArgs e)
+        {
+            this.ArrangeFormSize(1);
+        }
+
+        private void ArrangeFormSize(int opcion)
+        {
+            if(opcion == 1)
+                this.formGestionProd.Location = new Point(this.ClientSize.Width - this.formGestionProd.Width, this.ClientSize.Height - this.formGestionProd.Height);
+            else if(opcion == 2)
+                this.formSoliSumin.Location = new Point(this.ClientSize.Width - this.formSoliSumin.Width, this.ClientSize.Height - this.formSoliSumin.Height);
+        }
+
+        private void botonSolSumin_Click(object sender, EventArgs e)
+        {
+            //this.formSoliSumin = new fmrRegistrarSolicitudSuministro();
+            this.formSoliSumin.TopLevel = false;
+            this.formSoliSumin.Visible = true;
+            this.Controls.Add(this.formSoliSumin);
+            this.ArrangeFormSize(2);
         }
     }
 }

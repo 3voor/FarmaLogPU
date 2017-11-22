@@ -23,6 +23,7 @@
         /// el contenido de este método con el editor de código.
         /// </summary>
         private void InitializeComponent() {
+            this.components = new System.ComponentModel.Container();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.cboxPrioridad = new System.Windows.Forms.ComboBox();
             this.dtpFechaLimite = new System.Windows.Forms.DateTimePicker();
@@ -33,12 +34,13 @@
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnAdministrarSolicitud = new System.Windows.Forms.Button();
             this.dgvInsumo = new System.Windows.Forms.DataGridView();
-            this.btnInsertarInsumo = new System.Windows.Forms.Button();
-            this.btnEliminarInsumo = new System.Windows.Forms.Button();
-            this.btnModificar = new System.Windows.Forms.Button();
             this.NombreInsumo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.UnidadMedida = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnInsertarInsumo = new System.Windows.Forms.Button();
+            this.btnEliminarInsumo = new System.Windows.Forms.Button();
+            this.btnModificar = new System.Windows.Forms.Button();
+            this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvInsumo)).BeginInit();
             this.SuspendLayout();
@@ -140,6 +142,25 @@
             this.dgvInsumo.Size = new System.Drawing.Size(346, 150);
             this.dgvInsumo.TabIndex = 14;
             // 
+            // NombreInsumo
+            // 
+            this.NombreInsumo.HeaderText = "Nombre Insumo";
+            this.NombreInsumo.Name = "NombreInsumo";
+            this.NombreInsumo.ReadOnly = true;
+            this.NombreInsumo.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
+            // Cantidad
+            // 
+            this.Cantidad.HeaderText = "Cantidad";
+            this.Cantidad.Name = "Cantidad";
+            this.Cantidad.ReadOnly = true;
+            // 
+            // UnidadMedida
+            // 
+            this.UnidadMedida.HeaderText = "Unidad Medida";
+            this.UnidadMedida.Name = "UnidadMedida";
+            this.UnidadMedida.ReadOnly = true;
+            // 
             // btnInsertarInsumo
             // 
             this.btnInsertarInsumo.Location = new System.Drawing.Point(23, 179);
@@ -170,30 +191,17 @@
             this.btnModificar.UseVisualStyleBackColor = true;
             this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
             // 
-            // NombreInsumo
+            // bunifuElipse1
             // 
-            this.NombreInsumo.HeaderText = "Nombre Insumo";
-            this.NombreInsumo.Name = "NombreInsumo";
-            this.NombreInsumo.ReadOnly = true;
-            this.NombreInsumo.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            // 
-            // Cantidad
-            // 
-            this.Cantidad.HeaderText = "Cantidad";
-            this.Cantidad.Name = "Cantidad";
-            this.Cantidad.ReadOnly = true;
-            // 
-            // UnidadMedida
-            // 
-            this.UnidadMedida.HeaderText = "Unidad Medida";
-            this.UnidadMedida.Name = "UnidadMedida";
-            this.UnidadMedida.ReadOnly = true;
+            this.bunifuElipse1.ElipseRadius = 5;
+            this.bunifuElipse1.TargetControl = this;
             // 
             // fmrRegistrarSolicitudSuministro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(399, 429);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(46)))), ((int)(((byte)(59)))));
+            this.ClientSize = new System.Drawing.Size(759, 418);
             this.Controls.Add(this.btnModificar);
             this.Controls.Add(this.btnEliminarInsumo);
             this.Controls.Add(this.btnInsertarInsumo);
@@ -201,6 +209,7 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnAdministrarSolicitud);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "fmrRegistrarSolicitudSuministro";
             this.Text = "Solicitud Suministro";
             this.groupBox1.ResumeLayout(false);
@@ -228,6 +237,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn NombreInsumo;
         private System.Windows.Forms.DataGridViewTextBoxColumn Cantidad;
         private System.Windows.Forms.DataGridViewTextBoxColumn UnidadMedida;
+        private Bunifu.Framework.UI.BunifuElipse bunifuElipse1;
     }
 }
 
