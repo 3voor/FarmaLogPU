@@ -7,46 +7,12 @@ using Modelo;
 using System.ComponentModel;
 using System.Data.SqlClient;
 using MySql.Data.MySqlClient;
+using System.Data;
 
 namespace AccesoDatos
 {
     public class ProductoDA
-    {
-
-        public BindingList<Producto> obtenerListaProductos()
-        {
-            BindingList<Producto> lista = new BindingList<Producto>();
-            try
-            {
-                String cadena = "server=200.16.7.96; user=inf282g1; database=inf282g1;password=BRXRKa3O5JUiqJWn;";
-                MySqlConnection conn =
-                new MySqlConnection(cadena);
-                conn.Open();
-                System.Console.WriteLine("Conexion exitosa");
-                MySqlCommand cmd = new MySqlCommand();
-                cmd.CommandText = "SELECT * FROM PRODUCTO";
-                cmd.Connection = conn;
-                MySqlDataReader reader = cmd.ExecuteReader();
-
-                while (reader.Read())
-                {
-                    Producto p = new Producto();
-                    int id = reader.GetInt32("ID");
-                    String nombre = reader.GetString("Nombres");
-                    p.IdProducto = id;
-                    p.NombreProducto = nombre;
-                    lista.Add(p);
-                }                
-
-                conn.Close();
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex.Message);
-            }
-            return lista;
-        }
-
+    { 
         public BindingList<Producto> obtenerListaProductosCoincidencia(string nombreBuscado)
         {
             BindingList<Producto> lista = new BindingList<Producto>();

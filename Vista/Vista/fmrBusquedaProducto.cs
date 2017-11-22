@@ -25,6 +25,7 @@ namespace Vista
             gestorProducto = new ProductoBL();
             //productoSeleccionado = new Producto();
             InitializeComponent();
+            txtProducto.Enabled = true;
         }
 
         private void btnBuscar_Click(object sender, EventArgs e)
@@ -67,6 +68,18 @@ namespace Vista
             int index = dgvProducto.CurrentRow.Index;
             productoSeleccionado = lista[index];
             this.DialogResult = DialogResult.OK;
+        }
+
+        private void txtProducto_TextChanged(object sender, EventArgs e)
+        {
+            string nombreIngresado = txtProducto.Text;
+            lista = gestorProducto.devolverListaProductoCoincidencia(nombreIngresado);
+            AutoCompleteStringCollection col = new AutoCompleteStringCollection();
+            foreach (Producto p in lista)
+            {
+                col.Add(p.NombreProducto);
+            }
+            txtProducto.AutoCompleteCustomSource = col;
         }
     }
 }
