@@ -40,5 +40,15 @@ namespace Vista {
         {
             this.Close();
         }
+
+        private void botonMenu_Click(object sender, EventArgs e)
+        {
+            if(sideMenu.Width == 50)
+            {
+                sideMenu.Visible = false;
+                sideMenu.Width = 260;
+                Pane
+            }
+        }
     }
 }
