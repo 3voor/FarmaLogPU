@@ -7,17 +7,33 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Controlador;
+using Modelo;
+using System.Threading;
 
 namespace Vista {
     public partial class Principal : Form {
 
         private frmGestionProductos formGestionProd = null;
         private fmrRegistrarSolicitudSuministro formSoliSumin = null;
+        private UsuarioBL gestorEmpleado;
+        //private BindingList<Empleado> listaEmpleadosConectados;
 
         public Principal() {
             InitializeComponent();
             this.formGestionProd = new frmGestionProductos();
             this.formSoliSumin = new fmrRegistrarSolicitudSuministro();
+            gestorEmpleado = new UsuarioBL();
+            actualizarChat();
+            //listaEmpleadosConectados = gestorEmpleado.obtenerEmpleadosConectados();
+        }
+
+        public void actualizarChat()
+        {
+            gestorEmpleado = new UsuarioBL();            
+            BindingList<Empleado> lista = new BindingList<Empleado>();
+            Thread hilo = new Thread(() => gestorEmpleado.obtenerEmpleadosConectados(lista));
+            hilo.Start();
         }
 
         private void label1_Click(object sender, EventArgs e) {

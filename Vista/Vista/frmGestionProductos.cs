@@ -64,7 +64,7 @@ namespace Vista
             Rectangle rect = new Rectangle(30, 10, 130, 130);
             
             double total = 0.0;
-            int rec = 0;
+            //int rec = 0;
             foreach (Insumo i in producto.ListaInsumo)
             {
                 componentes.Add(i.Composicion);

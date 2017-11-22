@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.ComponentModel;
 
 namespace Controlador {
     public class UsuarioBL {
@@ -14,6 +15,16 @@ namespace Controlador {
         }
         public bool validarUsuario(Usuario u) {
             return usuarioDA.validarUsuario(u);
+        }
+
+        public void obtenerEmpleadosConectados(BindingList<Empleado> lista)
+        {
+            lista = usuarioDA.obtenerEmpleadosConectados();
+            foreach(Empleado e in lista)
+            {
+                Console.WriteLine(e.NombreEmpleado);
+            }
+            Console.WriteLine("-----------------");
         }
     }
 }

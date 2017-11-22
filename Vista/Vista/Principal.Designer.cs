@@ -35,7 +35,7 @@
             this.bunifuImageButton1 = new Bunifu.Framework.UI.BunifuImageButton();
             this.bunifuCustomLabel1 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.bunifuDragControl1 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.panelChat = new System.Windows.Forms.Panel();
             this.sideMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.botonMenu)).BeginInit();
@@ -203,13 +203,13 @@
             this.bunifuDragControl1.TargetControl = this.header;
             this.bunifuDragControl1.Vertical = true;
             // 
-            // panel1
+            // panelChat
             // 
-            this.panel1.BackColor = System.Drawing.Color.White;
-            this.panel1.Location = new System.Drawing.Point(1041, 61);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(170, 478);
-            this.panel1.TabIndex = 4;
+            this.panelChat.BackColor = System.Drawing.Color.White;
+            this.panelChat.Location = new System.Drawing.Point(1041, 61);
+            this.panelChat.Name = "panelChat";
+            this.panelChat.Size = new System.Drawing.Size(170, 478);
+            this.panelChat.TabIndex = 4;
             // 
             // Principal
             // 
@@ -217,7 +217,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(46)))), ((int)(((byte)(59)))));
             this.ClientSize = new System.Drawing.Size(1211, 539);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.panelChat);
             this.Controls.Add(this.sideMenu);
             this.Controls.Add(this.header);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -244,6 +244,6 @@
         private Bunifu.Framework.UI.BunifuImageButton botonMenu;
         private System.Windows.Forms.PictureBox pictureBox1;
         private Bunifu.Framework.UI.BunifuDragControl bunifuDragControl1;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panelChat;
     }
 }
