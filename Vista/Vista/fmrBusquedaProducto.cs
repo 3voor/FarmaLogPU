@@ -81,5 +81,10 @@ namespace Vista
             }
             txtProducto.AutoCompleteCustomSource = col;
         }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

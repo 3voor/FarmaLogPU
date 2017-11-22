@@ -31,7 +31,11 @@ namespace Vista
         private void btBuscar_Click(object sender, EventArgs e)
         {
             fmrBusquedaProducto fr = new fmrBusquedaProducto();
-            if(fr.ShowDialog() == DialogResult.OK)
+            //fr.TopLevel = false;
+            //fr.Visible = false;
+            //this.Controls.Add(fr);
+            fr.Location = new Point(this.ClientSize.Width - this.Width, this.ClientSize.Height - this.Height);
+            if (fr.ShowDialog() == DialogResult.OK)
             {
                 producto = fr.ProductoSeleccionado;
                 txtNombre.Text = Convert.ToString(producto.NombreProducto);
