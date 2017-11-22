@@ -44,6 +44,10 @@
             this.UnidadMedida = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pictureBoxPieChart = new System.Windows.Forms.PictureBox();
             this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
+            this.lblComponente1 = new System.Windows.Forms.Label();
+            this.lblComponente2 = new System.Windows.Forms.Label();
+            this.lblComponente3 = new System.Windows.Forms.Label();
+            this.lblComponente4 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvInsumo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPieChart)).BeginInit();
             this.SuspendLayout();
@@ -177,12 +181,48 @@
             this.bunifuElipse1.ElipseRadius = 5;
             this.bunifuElipse1.TargetControl = this;
             // 
+            // lblComponente1
+            // 
+            this.lblComponente1.AutoSize = true;
+            this.lblComponente1.Location = new System.Drawing.Point(541, 329);
+            this.lblComponente1.Name = "lblComponente1";
+            this.lblComponente1.Size = new System.Drawing.Size(0, 13);
+            this.lblComponente1.TabIndex = 10;
+            // 
+            // lblComponente2
+            // 
+            this.lblComponente2.AutoSize = true;
+            this.lblComponente2.Location = new System.Drawing.Point(541, 353);
+            this.lblComponente2.Name = "lblComponente2";
+            this.lblComponente2.Size = new System.Drawing.Size(0, 13);
+            this.lblComponente2.TabIndex = 11;
+            // 
+            // lblComponente3
+            // 
+            this.lblComponente3.AutoSize = true;
+            this.lblComponente3.Location = new System.Drawing.Point(541, 381);
+            this.lblComponente3.Name = "lblComponente3";
+            this.lblComponente3.Size = new System.Drawing.Size(0, 13);
+            this.lblComponente3.TabIndex = 12;
+            // 
+            // lblComponente4
+            // 
+            this.lblComponente4.AutoSize = true;
+            this.lblComponente4.Location = new System.Drawing.Point(541, 400);
+            this.lblComponente4.Name = "lblComponente4";
+            this.lblComponente4.Size = new System.Drawing.Size(0, 13);
+            this.lblComponente4.TabIndex = 13;
+            // 
             // frmGestionProductos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(46)))), ((int)(((byte)(59)))));
             this.ClientSize = new System.Drawing.Size(775, 456);
+            this.Controls.Add(this.lblComponente4);
+            this.Controls.Add(this.lblComponente3);
+            this.Controls.Add(this.lblComponente2);
+            this.Controls.Add(this.lblComponente1);
             this.Controls.Add(this.dgvInsumo);
             this.Controls.Add(this.pictureBoxPieChart);
             this.Controls.Add(this.btnComposicion);
@@ -196,6 +236,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmGestionProductos";
             this.Text = "Gestion Productos";
+            this.Load += new System.EventHandler(this.frmGestionProductos_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvInsumo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPieChart)).EndInit();
             this.ResumeLayout(false);
@@ -220,5 +261,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Cantidad;
         private System.Windows.Forms.DataGridViewTextBoxColumn UnidadMedida;
         private Bunifu.Framework.UI.BunifuElipse bunifuElipse1;
+        private System.Windows.Forms.Label lblComponente4;
+        private System.Windows.Forms.Label lblComponente3;
+        private System.Windows.Forms.Label lblComponente2;
+        private System.Windows.Forms.Label lblComponente1;
     }
 }

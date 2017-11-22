@@ -56,17 +56,19 @@ namespace Vista
         private void createPie()
         {
             List<Double> componentes = new List<Double>();
+            Color[] color = { Color.Aqua, Color.BlueViolet, Color.Coral, Color.BurlyWood, Color.Aquamarine, Color.Indigo };
+            Rectangle rect = new Rectangle(30, 10, 130, 130);
+            
             double total = 0.0;
+            int rec = 0;
             foreach (Insumo i in producto.ListaInsumo)
             {
                 componentes.Add(i.Composicion);
-                total += i.Composicion;
+                total += i.Composicion;                
             }
             componentes.Add(100.00 - total);
 
-            Color[] color = { Color.Aqua, Color.BlueViolet, Color.Coral, Color.BurlyWood, Color.Aquamarine, Color.Indigo };
-            Rectangle rect = new Rectangle(30, 10, 130, 130);
-
+            
             Graphics graphics = pictureBoxPieChart.CreateGraphics();
             graphics.Clear(pictureBoxPieChart.BackColor);
 
@@ -78,8 +80,50 @@ namespace Vista
                 fDegValue = Convert.ToSingle((componentes[iCnt] / total) * 360);
                 Brush brush = new SolidBrush(color[iCnt]);
                 graphics.FillPie(brush, rect, fDegSum, fDegValue);
-                fDegSum += fDegValue;
+                fDegSum += fDegValue;                
             }
+            leyenda(producto.ListaInsumo);
+        }
+
+        private void leyenda(BindingList<Insumo> lista)
+        {            
+            Color[] color = { Color.Aqua, Color.BlueViolet, Color.Coral, Color.BurlyWood, Color.Aquamarine, Color.Indigo };
+            int rec = 1;
+            foreach (Insumo i in lista)
+            {                
+                if(lista.Count == 2)
+                {
+                    if (rec == 1)
+                    {
+                        lblComponente1.Text = i.NombreInsumo;
+                        lblComponente1.BackColor = color[rec - 1];
+                    }
+                    else if (rec == 2){
+                        lblComponente2.Text = i.NombreInsumo;
+                        lblComponente2.BackColor = color[rec - 1];
+                    }
+                    else if (rec == 3) {
+                        lblComponente3.Text = "Otros insumos";
+                        lblComponente2.BackColor = color[rec - 1];
+                    }
+                    rec++;
+                }
+                else if(lista.Count == 3)
+                {
+                    if (rec == 1) lblComponente1.Text = i.NombreInsumo;
+                    else if (rec == 2) lblComponente2.Text = i.NombreInsumo;
+                    else if (rec == 3) lblComponente3.Text = i.NombreInsumo;
+                    else lblComponente4.Text = "Otros Insumos";
+                    rec++;
+                }
+                
+            }           
+
+        }
+
+        private void frmGestionProductos_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
