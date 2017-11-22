@@ -87,7 +87,7 @@
             // botonSolSumin
             // 
             this.botonSolSumin.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
-            this.botonSolSumin.BackColor = System.Drawing.Color.Transparent;
+            this.botonSolSumin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
             this.botonSolSumin.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.botonSolSumin.BorderRadius = 0;
             this.botonSolSumin.ButtonText = "Solicitudes de Suministro";
@@ -125,7 +125,7 @@
             // Bus
             // 
             this.Bus.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
-            this.Bus.BackColor = System.Drawing.Color.Transparent;
+            this.Bus.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
             this.Bus.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.Bus.BorderRadius = 0;
             this.Bus.ButtonText = "Gestion de Productos";

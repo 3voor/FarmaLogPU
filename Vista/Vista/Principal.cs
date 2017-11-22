@@ -33,7 +33,7 @@ namespace Vista {
         }
 
         private void btnBuscarProd_Click(object sender, EventArgs e) {
-            frmGestionProductos frmProd = new frmGestionProductos();
+            frmGestionProductos frmProd = new frmGestionProductos();            
             frmProd.Show();
         }
 
@@ -65,6 +65,7 @@ namespace Vista {
             this.formSoliSumin.Visible = false;
             this.Controls.Add(this.formGestionProd);            
             this.ArrangeFormSize(1);
+            this.formSoliSumin.Hide();
         }
 
         private void Principal_SizeChange(object sender, EventArgs e)
@@ -87,6 +88,7 @@ namespace Vista {
             this.formSoliSumin.Visible = true;
             this.Controls.Add(this.formSoliSumin);
             this.ArrangeFormSize(2);
+            this.formGestionProd.Hide();
         }
     }
 }
