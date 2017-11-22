@@ -35,5 +35,10 @@ namespace Vista {
             fmrRegistrarSolicitudSuministro frmSol = new fmrRegistrarSolicitudSuministro();
             frmSol.Show();
         }
+
+        private void bunifuImageButton1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
