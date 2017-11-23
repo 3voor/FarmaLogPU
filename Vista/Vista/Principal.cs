@@ -10,6 +10,8 @@ using System.Windows.Forms;
 using Controlador;
 using Modelo;
 using System.Threading;
+using System.Net;
+using System.Net.Sockets;
 
 namespace Vista {
     public partial class Principal : Form {
@@ -35,8 +37,22 @@ namespace Vista {
             this.formSoliSumin = new fmrRegistrarSolicitudSuministro();
             gestorEmpleado = new UsuarioBL();
             actualizarChat();
-            
+
             //listaEmpleadosConectados = gestorEmpleado.obtenerEmpleadosConectados();
+            byte[] data = new byte[1024];
+            IPEndPoint endPoint = new IPEndPoint(IPAddress.Any, 8888);
+
+            Socket sck = new Socket(AddressFamily.InterNetwork, SocketType.Dgram, ProtocolType.Udp);
+            sck.Bind(endPoint);
+
+            Console.WriteLine("Waiting for client...");
+
+            EndPoint remote = (EndPoint)endPoint;
+
+            int recv = sck.ReceiveFrom(data, ref remote);
+
+            Console.WriteLine("Mensaje del admin(java): " + Encoding.ASCII.GetString(data, 0, recv));
+
         }
 
         public void actualizarChat()
