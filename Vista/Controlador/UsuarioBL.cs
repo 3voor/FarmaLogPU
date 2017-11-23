@@ -17,14 +17,10 @@ namespace Controlador {
             return usuarioDA.validarUsuario(u);
         }
 
-        public void obtenerEmpleadosConectados(BindingList<Empleado> lista)
-        {
-            lista = usuarioDA.obtenerEmpleadosConectados();
-            foreach(Empleado e in lista)
-            {
-                Console.WriteLine(e.NombreEmpleado);
-            }
-            Console.WriteLine("-----------------");
+        public BindingList<Empleado> obtenerEmpleadosConectados()
+        {            
+            return usuarioDA.obtenerEmpleadosConectados();
+            
         }
     }
 }

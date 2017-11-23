@@ -36,11 +36,13 @@
             this.bunifuCustomLabel1 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.bunifuDragControl1 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
             this.panelChat = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
             this.sideMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.botonMenu)).BeginInit();
             this.header.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton1)).BeginInit();
+            this.panelChat.SuspendLayout();
             this.SuspendLayout();
             // 
             // bunifuElipse1
@@ -206,10 +208,21 @@
             // panelChat
             // 
             this.panelChat.BackColor = System.Drawing.Color.White;
+            this.panelChat.Controls.Add(this.button1);
             this.panelChat.Location = new System.Drawing.Point(1041, 61);
             this.panelChat.Name = "panelChat";
             this.panelChat.Size = new System.Drawing.Size(170, 478);
             this.panelChat.TabIndex = 4;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(42, 22);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(104, 38);
+            this.button1.TabIndex = 0;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
             // Principal
             // 
@@ -217,9 +230,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(46)))), ((int)(((byte)(59)))));
             this.ClientSize = new System.Drawing.Size(1211, 539);
-            this.Controls.Add(this.panelChat);
             this.Controls.Add(this.sideMenu);
             this.Controls.Add(this.header);
+            this.Controls.Add(this.panelChat);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Principal";
             this.Text = "Principal";
@@ -229,6 +242,7 @@
             this.header.ResumeLayout(false);
             this.header.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton1)).EndInit();
+            this.panelChat.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -245,5 +259,6 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private Bunifu.Framework.UI.BunifuDragControl bunifuDragControl1;
         private System.Windows.Forms.Panel panelChat;
+        private System.Windows.Forms.Button button1;
     }
 }

@@ -14,26 +14,39 @@ using System.Threading;
 namespace Vista {
     public partial class Principal : Form {
 
+        TextBox[] txtBox;
+        Label[] lbl;
+        public BindingList<Empleado> lista;
+
+        int n = 4;
+        int space = 20;
+        int yIni = 150;
+
+
         private frmGestionProductos formGestionProd = null;
         private fmrRegistrarSolicitudSuministro formSoliSumin = null;
         private UsuarioBL gestorEmpleado;
-        //private BindingList<Empleado> listaEmpleadosConectados;
+        private BindingList<Empleado> listaEmpleadosConectados;
 
+        
         public Principal() {
             InitializeComponent();
             this.formGestionProd = new frmGestionProductos();
             this.formSoliSumin = new fmrRegistrarSolicitudSuministro();
             gestorEmpleado = new UsuarioBL();
             actualizarChat();
+            
             //listaEmpleadosConectados = gestorEmpleado.obtenerEmpleadosConectados();
         }
 
         public void actualizarChat()
         {
-            gestorEmpleado = new UsuarioBL();            
+            //gestorEmpleado = new UsuarioBL();            
             BindingList<Empleado> lista = new BindingList<Empleado>();
-            Thread hilo = new Thread(() => gestorEmpleado.obtenerEmpleadosConectados(lista));
-            hilo.Start();
+            //Thread hilo = new Thread(() => gestorEmpleado.obtenerEmpleadosConectados(lista));
+            //gestorEmpleado.obtenerEmpleadosConectados(lista);
+
+            //hilo.Start();
         }
 
         private void label1_Click(object sender, EventArgs e) {
@@ -105,6 +118,57 @@ namespace Vista {
             this.Controls.Add(this.formSoliSumin);
             this.ArrangeFormSize(2);
             this.formGestionProd.Hide();
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            //gestorEmpleado = new UsuarioBL();
+            //BindingList<Empleado> lista = new BindingList<Empleado>();
+            //Thread hilo = new Thread(() => gestorEmpleado.obtenerEmpleadosConectados(lista));
+            //gestorEmpleado.obtenerEmpleadosConectados(lista);
+            gestorEmpleado = new UsuarioBL();
+            BindingList<Empleado> lista = new BindingList<Empleado>();
+            lista = gestorEmpleado.obtenerEmpleadosConectados();
+
+            n = lista.Count();
+            Console.WriteLine(n);
+
+            txtBox = new TextBox[n];
+            lbl = new Label[n];
+
+
+            int space = 20;
+
+            for (int i = 0; i < n; i++)
+            {
+                Empleado emp = lista[i];
+
+                txtBox[i] = new TextBox();
+                txtBox[i].Name = "n" + i;
+                txtBox[i].Text = emp.NombreEmpleado;
+
+                lbl[i] = new Label();
+                lbl[i].ForeColor = System.Drawing.Color.Red;
+                lbl[i].Name = "n" + (i+1);
+                lbl[i].Text = "n" + (i+1);
+            }
+
+
+            for (int i = 0; i < n; i++)
+            {
+                txtBox[i].Visible = true;
+                lbl[i].Visible = true;
+                txtBox[i].Location = new Point(1090, yIni + space);
+                txtBox[i].BringToFront();
+                lbl[i].Location = new Point(1060, yIni + space);
+                lbl[i].BringToFront();
+                this.Controls.Add(txtBox[i]);
+                this.Controls.Add(lbl[i]);
+                space += 50;
+
+            }
+
+            this.panelChat.SendToBack();
         }
     }
 }
